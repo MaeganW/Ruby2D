@@ -5,9 +5,9 @@ namespace Managers
    public class PersistenceManager
    {
        
-      public void concat(string val)
+      public string concat(string val)
       {
-          val += "!";
+          return val += "!";
       }
    }
 
