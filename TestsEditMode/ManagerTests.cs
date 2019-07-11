@@ -46,5 +46,14 @@ namespace Tests
             Assert.AreEqual(bsm.CMIncrement(num), 100);
         }
         
+        [Test]
+        public void test_base_scene_manager_uses_pm()
+        {
+            var bsm = new BaseSceneManager();
+            var num = 99;
+            
+            Assert.AreEqual(bsm.PMIncrement(num), 100);
+        }
+        
     }
 }
