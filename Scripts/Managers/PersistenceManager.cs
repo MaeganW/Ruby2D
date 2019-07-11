@@ -25,26 +25,18 @@ namespace Managers
 
        #endregion
        
-       
-       
-       
-       public ContentManager cm = new ContentManager();
+       ChooseDeviceScreen cds;
 
        public int Increment(int num)
        {
-           ChooseDeviceScreen cds;
            return ++num;
        }
        
-        public string Concat(string val)
-        { 
-            return val += "!";
-        }
-
-        public int CMIncrement(int num)
-        {
-            return cm.Increment(num);
-        }
+       public int InstantiatedCMIncrement(int num)
+       {
+           ContentManager cm = new ContentManager();
+           return cm.Increment(num);
+       }
    }
 
 }

@@ -17,5 +17,14 @@ namespace Tests
             
             Assert.AreEqual(cm.Increment(num), 100);
         }
+        
+        [Test]
+        public void test_content_manager_uses_singleton_pm()
+        {
+            var cm = new ContentManager();
+            var num = 99;
+            
+            Assert.AreEqual(cm.SingletonPMIncrement(num), 100);
+        }
     }
 }
