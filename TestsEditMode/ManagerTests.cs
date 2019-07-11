@@ -25,7 +25,16 @@ namespace Tests
             var pm = new PersistenceManager();
             var hello = "hello";
             
-            Assert.AreEqual(pm.concat(hello), "hello!");
+            Assert.AreEqual(pm.Concat(hello), "hello!");
+        }
+
+        [Test]
+        public void test_persistence_manager_uses_content_manager()
+        {
+            var pm = new PersistenceManager();
+            var num = 99;
+            
+            Assert.AreEqual(pm.CMIncrement(num), 100);
         }
         
     }
