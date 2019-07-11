@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Managers.ManagerInterfaces;
 using UnityEngine;
+using Zenject;
 
 public class RubyController : MonoBehaviour
 {
+    [Inject] protected IContentManager cm;
+    
     public float speed = 3.0f;
     public int maxHealth = 5;
     private int currentHealth;
@@ -96,5 +100,15 @@ public class RubyController : MonoBehaviour
         projectile.Launch(lookDirection, 300);
         
         animator.SetTrigger("Launch");
+    }
+
+    public int Increment(int num)
+    {
+        return ++num;
+    }
+
+    public int InjectedCMIncrement(int num)
+    {
+        return cm.Increment(num);
     }
 }

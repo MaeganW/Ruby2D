@@ -5,7 +5,7 @@ using Managers.ManagerInterfaces;
 
 namespace Managers
 {
-    public class BaseSceneManager: MonoBehaviour
+    public class BaseSceneManager
     {
         [Inject] protected IContentManager contentManager;
         [Inject] protected IPersistenceManager persistenceManager;
