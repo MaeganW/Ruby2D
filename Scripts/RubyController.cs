@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Managers.ManagerInterfaces;
+using Ruby2DInterfaces;
 using UnityEngine;
 using Zenject;
 
-public class RubyController : MonoBehaviour
+public class RubyController : MonoBehaviour, IRubyController
 {
     [Inject] protected IContentManager cm;
     
@@ -106,7 +107,7 @@ public class RubyController : MonoBehaviour
     {
         return ++num;
     }
-
+    
     public int InjectedCMIncrement(int num)
     {
         return cm.Increment(num);
