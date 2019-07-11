@@ -4,8 +4,6 @@ namespace Managers
 {
     public class ContentManager
     {
-        private ChooseDeviceScreen cds;
-        
         public int Increment(int num)
         {
             return ++num;
@@ -13,8 +11,14 @@ namespace Managers
         
         public int SingletonPMIncrement(int num)
         {
-            ChooseDeviceScreen cds;
             return PersistenceManager.Singleton.Increment(num);
+        }
+
+        public int InstantiatedGlobalCDSIncrement(int num)
+        {
+            var cds = new ChooseDeviceScreen();
+
+            return cds.Increment(num);
         }
     }
 }

@@ -25,7 +25,6 @@ namespace Managers
 
        #endregion
        
-       ChooseDeviceScreen cds;
 
        public int Increment(int num)
        {
@@ -37,6 +36,13 @@ namespace Managers
            ContentManager cm = new ContentManager();
            return cm.Increment(num);
        }
+
+       public int InstantiatedGlobalCDSIncrement(int num)
+       {
+           var cds = new ChooseDeviceScreen();
+           return cds.Increment(num);
+       }
+       
    }
 
 }

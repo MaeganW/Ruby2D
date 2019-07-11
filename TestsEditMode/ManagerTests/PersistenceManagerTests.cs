@@ -9,10 +9,11 @@ namespace Tests
 {
     public class PersistenceManagerTests
     {
+        private PersistenceManager pm = new PersistenceManager();
+        
         [Test]
         public void test_persistence_manager_class_methods()
         {
-            var pm = new PersistenceManager();
             var num = 99;
             
             Assert.AreEqual(pm.Increment(num), 100);
@@ -21,10 +22,17 @@ namespace Tests
         [Test]
         public void test_persistence_manager_uses_instantiated_cm()
         {
-            var pm = new PersistenceManager();
             var num = 99;
             
             Assert.AreEqual(pm.InstantiatedCMIncrement(num), 100);
+        }
+
+        [Test]
+        public void test_persistence_manager_uses_instantiated_global_cds()
+        {
+            var num = 99;
+            
+            Assert.AreEqual(pm.InstantiatedGlobalCDSIncrement(num), 100);
         }
     }
 }
