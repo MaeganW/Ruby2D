@@ -38,6 +38,15 @@ namespace Tests
         }
 
         [Test]
+        public void test_base_scene_manager_class_methods()
+        {
+            var bsm = new BaseSceneManager();
+            var num = 99;
+            
+            Assert.AreEqual(bsm.Increment(num), 100);
+        }
+        
+        [Test]
         public void test_base_scene_manager_uses_cm()
         {
             var bsm = new BaseSceneManager();

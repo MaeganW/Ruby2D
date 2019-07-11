@@ -8,6 +8,11 @@ namespace Managers
         [Inject] protected ContentManager contentManager;
         [Inject] protected PersistenceManager persistenceManager;
 
+        public int Increment(int num)
+        {
+            return ++num;
+        }
+
         public int CMIncrement(int num)
         {
             return contentManager.Increment(num);
