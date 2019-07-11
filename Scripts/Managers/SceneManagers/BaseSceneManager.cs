@@ -1,12 +1,14 @@
 using System;
+using UnityEngine;
 using Zenject;
+using Managers.ManagerInterfaces;
 
 namespace Managers
 {
-    public class BaseSceneManager
+    public class BaseSceneManager: MonoBehaviour
     {
-        [Inject] protected ContentManager contentManager;
-        [Inject] protected PersistenceManager persistenceManager;
+        [Inject] protected IContentManager contentManager;
+        [Inject] protected IPersistenceManager persistenceManager;
 
         public int Increment(int num)
         {

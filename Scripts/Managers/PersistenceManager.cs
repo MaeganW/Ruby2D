@@ -1,8 +1,9 @@
 using System;
+using Managers.ManagerInterfaces;
 
 namespace Managers
 {
-   public class PersistenceManager
+   public class PersistenceManager: IPersistenceManager
    { 
        #region Singleton
 

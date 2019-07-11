@@ -1,8 +1,9 @@
 using System;
+using Managers.ManagerInterfaces;
 
 namespace Managers
 {
-    public class ContentManager
+    public class ContentManager: IContentManager
     {
         public int Increment(int num)
         {
