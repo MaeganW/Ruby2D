@@ -13,14 +13,19 @@ namespace Managers
             return ++num;
         }
 
-        public int CMIncrement(int num)
+        public int InjectedCMIncrement(int num)
         {
             return contentManager.Increment(num);
         }
 
-        public int PMIncrement(int num)
+        public int InjectedPMIncrement(int num)
         {
             return persistenceManager.Increment(num);
+        }
+
+        public int SingletonPMIncrement(int num)
+        {
+            return PersistenceManager.Singleton.Increment(num);
         }
     }
 }
