@@ -4,7 +4,30 @@ namespace Managers
 {
    public class PersistenceManager
    { 
-       public int num = 5;
+       #region Singleton
+
+       private static PersistenceManager self;
+       private static readonly object singletonLock = new object();
+
+       public static PersistenceManager Singleton
+       {
+           get
+           {
+               lock (singletonLock)
+               {
+                   if (self == null)
+                       self = new PersistenceManager();
+               }
+
+               return self;
+           }
+       }
+
+       #endregion
+       
+       
+       
+       
        public ContentManager cm = new ContentManager();
 
        public int Increment(int num)
